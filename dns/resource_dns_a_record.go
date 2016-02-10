@@ -33,6 +33,16 @@ func resourceDnsARecord() *schema.Resource {
 				ForceNew: true,
 			},
 
+			// Optionally filter IPv6 records from DNS replies.
+			// This is helpful for other resources that do no support IPv6 yet,
+			// such as AWS security groups
+			"ipv4": &schema.Schema{
+				Type:     schema.TypeBool,
+				Optional: true,
+				Default:  false,
+				ForceNew: true,
+			},
+
 			"addrs": &schema.Schema{
 				Type:     schema.TypeList,
 				Elem:     &schema.Schema{Type: schema.TypeString},
@@ -48,12 +58,25 @@ func resourceDnsARecordCreate(d *schema.ResourceData, meta interface{}) error {
 }
 
 func resourceDnsARecordRead(d *schema.ResourceData, meta interface{}) error {
-	addrs, err := net.LookupHost(d.Id())
+	records, err := net.LookupIP(d.Id())
+
 	if err != nil {
 		return err
 	}
 
+	addrs := make([]string, 0)
+	filterEnabled := d.Get("ipv4").(bool)
 	sortingEnabled := d.Get("sort").(bool)
+
+	for _, ip := range records {
+		if filterEnabled {
+			if ipv4 := ip.To4(); ipv4 != nil {
+				addrs = append(addrs, ipv4.String())
+			}
+		} else {
+			addrs = append(addrs, ip.String())
+		}
+	}
 
 	if sortingEnabled {
 		sort.Strings(addrs)
