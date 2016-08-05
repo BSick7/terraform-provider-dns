@@ -1,0 +1,4 @@
+package: github.com/steve-jansen/terraform-provider-dns
+import:
+- package: github.com/hashicorp/terraform
+  version: 0.7.0
