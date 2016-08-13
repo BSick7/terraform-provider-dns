@@ -10,9 +10,15 @@ func Provider() terraform.ResourceProvider {
 		Schema: map[string]*schema.Schema{},
 
 		ResourcesMap: map[string]*schema.Resource{
-			"dns_a_record":     resourceDnsARecord(),
-			"dns_cname_record": resourceDnsCnameRecord(),
-			"dns_txt_record":   resourceDnsTxtRecord(),
+			"dns_a_record": schema.DataSourceResourceShim(
+				"dns_a_record",
+				dataSourceDnsARecord(),
+			),
+		},
+		DataSourcesMap: map[string]*schema.Resource{
+			"dns_a_record":     dataSourceDnsARecord(),
+			"dns_cname_record": dataSourceDnsCnameRecord(),
+			"dns_text_record":  dataSourceDnsTxtRecord(),
 		},
 	}
 }

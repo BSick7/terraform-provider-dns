@@ -1,94 +1,134 @@
-hash: 5fdd45c4c6a00f66ab17f7235d35d86942c32d69a0f85061f3211e1bd67ce859
-updated: 2016-08-02T21:17:53.762948-04:00
+hash: fd0ab3dea17e43d347961e9762ab66f62b3c804601ab600785170f62c2ef855c
+updated: 2016-08-12T14:31:51.3845548-04:00
 imports:
 - name: github.com/apparentlymart/go-cidr
   version: a3ebdb999b831ecb6ab8a226e31b07b2b9061c47
   subpackages:
-  - cidr
+  - github.com\apparentlymart\go-cidr\cidr
 - name: github.com/aws/aws-sdk-go
-  version: 00e2bf9d1518c2b7d8a97eb05b5d2a9afd1dd34e
+  version: f80e7d0182a463dff0c0da6bbed57f21369d4346
   subpackages:
-  - aws
-  - aws/credentials
-  - aws/credentials/ec2rolecreds
-  - aws/ec2metadata
-  - aws/session
-  - service/s3
-  - aws/awserr
-  - aws/client
-  - aws/client/metadata
-  - aws/request
-  - aws/corehandlers
-  - aws/credentials/stscreds
-  - aws/defaults
-  - private/endpoints
-  - aws/awsutil
-  - aws/signer/v4
-  - private/protocol
-  - private/protocol/restxml
-  - private/waiter
-  - service/sts
-  - aws/credentials/endpointcreds
-  - private/protocol/rest
-  - private/protocol/query
-  - private/protocol/xml/xmlutil
-  - private/protocol/query/queryutil
+  - github.com\aws\aws-sdk-go\aws
+  - github.com\aws\aws-sdk-go\aws\credentials
+  - github.com\aws\aws-sdk-go\aws\credentials\ec2rolecreds
+  - github.com\aws\aws-sdk-go\aws\ec2metadata
+  - github.com\aws\aws-sdk-go\aws\session
+  - github.com\aws\aws-sdk-go\service\s3
+  - github.com\aws\aws-sdk-go\aws\awserr
+  - github.com\aws\aws-sdk-go\aws\client
+  - github.com\aws\aws-sdk-go\aws\client\metadata
+  - github.com\aws\aws-sdk-go\aws\request
+  - github.com\aws\aws-sdk-go\aws\corehandlers
+  - github.com\aws\aws-sdk-go\aws\credentials\stscreds
+  - github.com\aws\aws-sdk-go\aws\defaults
+  - github.com\aws\aws-sdk-go\private\endpoints
+  - github.com\aws\aws-sdk-go\aws\awsutil
+  - github.com\aws\aws-sdk-go\aws\signer\v4
+  - github.com\aws\aws-sdk-go\private\protocol
+  - github.com\aws\aws-sdk-go\private\protocol\restxml
+  - github.com\aws\aws-sdk-go\private\waiter
+  - github.com\aws\aws-sdk-go\service\sts
+  - github.com\aws\aws-sdk-go\aws\credentials\endpointcreds
+  - github.com\aws\aws-sdk-go\private\protocol\rest
+  - github.com\aws\aws-sdk-go\private\protocol\query
+  - github.com\aws\aws-sdk-go\private\protocol\xml\xmlutil
+  - github.com\aws\aws-sdk-go\private\protocol\query\queryutil
+- name: github.com/davecgh/go-spew
+  version: 5215b55f46b2b919f50a1df0eaa5886afe4e3b3d
+  subpackages:
+  - github.com\davecgh\go-spew\spew
 - name: github.com/go-ini/ini
-  version: cf53f9204df4fbdd7ec4164b57fa6184ba168292
+  version: cefc24de9422bb3a6422b307cb3f4502ffd5640c
+  subpackages:
+  - github.com\go-ini\ini
 - name: github.com/hashicorp/errwrap
   version: 7554cd9344cec97297fa6649b055a8c98c2a1e55
+  subpackages:
+  - github.com\hashicorp\errwrap
 - name: github.com/hashicorp/go-getter
   version: 3d6040e1c4b972f6634c5aafb08901f916c5ee3c
   subpackages:
-  - helper/url
+  - github.com\hashicorp\go-getter
+  - github.com\hashicorp\go-getter\helper\url
 - name: github.com/hashicorp/go-multierror
-  version: d30f09973e19c1dfcd120b2d9c4f168e68d6b5d5
+  version: 8c5f0ad9360406a3807ce7de6bc73269a91a6e51
+  subpackages:
+  - github.com\hashicorp\go-multierror
 - name: github.com/hashicorp/go-plugin
   version: 8cf118f7a2f0c7ef1c82f66d4f6ac77c7e27dc12
+  subpackages:
+  - github.com\hashicorp\go-plugin
 - name: github.com/hashicorp/go-uuid
   version: 64130c7a86d732268a38cb04cfbaf0cc987fda98
+  subpackages:
+  - github.com\hashicorp\go-uuid
 - name: github.com/hashicorp/go-version
   version: deeb027c13a95d56c7585df3fe29207208c6706e
+  subpackages:
+  - github.com\hashicorp\go-version
 - name: github.com/hashicorp/hcl
   version: d8c773c4cba11b11539e3d45f93daeaa5dcf1fa1
   subpackages:
-  - hcl/ast
-  - hcl/parser
-  - hcl/token
-  - json/parser
-  - hcl/scanner
-  - hcl/strconv
-  - json/scanner
-  - json/token
+  - github.com\hashicorp\hcl
+  - github.com\hashicorp\hcl\hcl\ast
+  - github.com\hashicorp\hcl\hcl\parser
+  - github.com\hashicorp\hcl\hcl\token
+  - github.com\hashicorp\hcl\json\parser
+  - github.com\hashicorp\hcl\hcl\scanner
+  - github.com\hashicorp\hcl\hcl\strconv
+  - github.com\hashicorp\hcl\json\scanner
+  - github.com\hashicorp\hcl\json\token
 - name: github.com/hashicorp/hil
   version: 1e86c6b523c55d1fa6c6e930ce80b548664c95c2
   subpackages:
-  - ast
+  - github.com\hashicorp\hil
+  - github.com\hashicorp\hil\ast
+- name: github.com/hashicorp/logutils
+  version: 0dc08b1671f34c4250ce212759ebd880f743d883
+  subpackages:
+  - github.com\hashicorp\logutils
 - name: github.com/hashicorp/terraform
   version: e822a79165dbc06bbf8271ee349fe256867d53dc
   subpackages:
-  - plugin
-  - helper/schema
-  - terraform
-  - helper/hashcode
-  - config
-  - config/module
-  - dag
-  - dot
-  - flatmap
-  - helper/hilmapstructure
+  - github.com\hashicorp\terraform\plugin
+  - github.com\hashicorp\terraform\helper\resource
+  - github.com\hashicorp\terraform\helper\schema
+  - github.com\hashicorp\terraform\terraform
+  - github.com\hashicorp\terraform\config\module
+  - github.com\hashicorp\terraform\helper\config
+  - github.com\hashicorp\terraform\helper\logging
+  - github.com\hashicorp\terraform\helper\hashcode
+  - github.com\hashicorp\terraform\config
+  - github.com\hashicorp\terraform\dag
+  - github.com\hashicorp\terraform\dot
+  - github.com\hashicorp\terraform\flatmap
+  - github.com\hashicorp\terraform\helper\hilmapstructure
 - name: github.com/hashicorp/yamux
   version: d1caa6c97c9fc1cc9e83bbe34d0603f9ff0ce8bd
+  subpackages:
+  - github.com\hashicorp\yamux
 - name: github.com/jmespath/go-jmespath
-  version: 0b12d6b521d83fc7f755e7cfc1b1fbdd35a01a74
+  version: bd40a432e4c76585ef6b72d3fd96fb9b6dc7b68d
+  subpackages:
+  - github.com\jmespath\go-jmespath
 - name: github.com/mitchellh/copystructure
-  version: ae8f8315ad044b86ced2e0be9e3598e9dd94f38e
+  version: cdac8253d00f2ecf0a0b19fbff173a9a72de4f82
+  subpackages:
+  - github.com\mitchellh\copystructure
 - name: github.com/mitchellh/go-homedir
   version: 756f7b183b7ab78acdbbee5c7f392838ed459dda
+  subpackages:
+  - github.com\mitchellh\go-homedir
 - name: github.com/mitchellh/mapstructure
-  version: 21a35fb16463dfb7c8eee579c65d995d95e64d1e
+  version: ca63d7c062ee3c9f34db231e352b60012b4fd0c1
+  subpackages:
+  - github.com\mitchellh\mapstructure
 - name: github.com/mitchellh/reflectwalk
   version: eecf4c70c626c7cfbb95c90195bc34d386c74ac6
+  subpackages:
+  - github.com\mitchellh\reflectwalk
 - name: github.com/satori/go.uuid
   version: 0aa62d5ddceb50dbcb909d790b5345affd3669b6
+  subpackages:
+  - github.com\satori\go.uuid
 devImports: []
