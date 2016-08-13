@@ -1,4 +1,5 @@
 # terraform-provider-dns
+[![CircleCI](https://circleci.com/gh/steve-jansen/terraform-provider-dns.svg?style=svg)](https://circleci.com/gh/steve-jansen/terraform-provider-dns)
 
 A terraform plugin that provides read-only resources for DNS records.
 
