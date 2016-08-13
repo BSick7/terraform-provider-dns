@@ -1,7 +1,7 @@
 machine:
   environment:
     GOPATH: "$HOME/.go_workspace"
-    IMPORT_PATH: "github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME"
+    IMPORT_PATH: "github.com/Shopify/terraform-provider-dns"
     BUILD_PATH: "$GOPATH/src/$IMPORT_PATH"
 
 checkout:
