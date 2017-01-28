@@ -1,4 +1,4 @@
 package: github.com/Shopify/terraform-provider-dns
 import:
 - package: github.com/hashicorp/terraform
-  version: 0.7.0
+  version: 0.8.0
