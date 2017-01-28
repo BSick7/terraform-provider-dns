@@ -1,8 +1,9 @@
 package dns
 
 import (
-	r "github.com/hashicorp/terraform/helper/resource"
 	"testing"
+
+	r "github.com/hashicorp/terraform/helper/resource"
 )
 
 func TestAccDnsCnameRecord_Basic(t *testing.T) {

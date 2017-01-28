@@ -1,9 +1,11 @@
 package dns
 
 import (
-	"github.com/hashicorp/terraform/helper/schema"
+	"fmt"
 	"net"
 	"sort"
+
+	"github.com/hashicorp/terraform/helper/schema"
 )
 
 func dataSourceDnsARecord() *schema.Resource {
@@ -28,7 +30,7 @@ func dataSourceDnsARecordRead(d *schema.ResourceData, meta interface{}) error {
 
 	records, err := net.LookupIP(host)
 	if err != nil {
-		return err
+		return fmt.Errorf("error looking up A records for %q: %s", host, err)
 	}
 
 	addrs := make([]string, 0)

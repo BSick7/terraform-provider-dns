@@ -1,8 +1,10 @@
 package dns
 
 import (
-	"github.com/hashicorp/terraform/helper/schema"
+	"fmt"
 	"net"
+
+	"github.com/hashicorp/terraform/helper/schema"
 )
 
 func dataSourceDnsTxtRecord() *schema.Resource {
@@ -31,9 +33,10 @@ func dataSourceDnsTxtRecord() *schema.Resource {
 }
 
 func dataSourceDnsTxtRecordRead(d *schema.ResourceData, meta interface{}) error {
-	records, err := net.LookupTXT(d.Get("host").(string))
+	host := d.Get("host").(string)
+	records, err := net.LookupTXT(host)
 	if err != nil {
-		return err
+		return fmt.Errorf("error looking up TXT records for %q: %s", host, err)
 	}
 
 	if len(records) > 0 {

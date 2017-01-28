@@ -2,8 +2,9 @@ package dns
 
 import (
 	"fmt"
-	r "github.com/hashicorp/terraform/helper/resource"
 	"testing"
+
+	r "github.com/hashicorp/terraform/helper/resource"
 )
 
 func TestAccDnsARecord_Basic(t *testing.T) {

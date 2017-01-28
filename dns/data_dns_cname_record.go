@@ -1,8 +1,10 @@
 package dns
 
 import (
-	"github.com/hashicorp/terraform/helper/schema"
+	"fmt"
 	"net"
+
+	"github.com/hashicorp/terraform/helper/schema"
 )
 
 func dataSourceDnsCnameRecord() *schema.Resource {
@@ -29,7 +31,7 @@ func dataSourceDnsCnameRecordRead(d *schema.ResourceData, meta interface{}) erro
 
 	cname, err := net.LookupCNAME(host)
 	if err != nil {
-		return err
+		return fmt.Errorf("error looking up CNAME records for %q: %s", host, err)
 	}
 
 	d.Set("cname", cname)
