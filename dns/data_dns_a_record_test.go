@@ -1,6 +1,7 @@
 package dns
 
 import (
+	"fmt"
 	r "github.com/hashicorp/terraform/helper/resource"
 	"testing"
 )
@@ -8,6 +9,7 @@ import (
 func TestAccDnsARecord_Basic(t *testing.T) {
 	tests := []struct {
 		DataSourceBlock string
+		DataSourceName  string
 		Expected        []string
 	}{
 		{
@@ -16,8 +18,20 @@ func TestAccDnsARecord_Basic(t *testing.T) {
 			  host = "127.0.0.1.nip.io"
 			}
 			`,
+			"foo",
 			[]string{
 				"127.0.0.1",
+			},
+		},
+		{
+			`
+			data "dns_a_record" "ntp" {
+			  host = "time-c.nist.gov"
+			}
+			`,
+			"ntp",
+			[]string{
+				"129.6.15.30",
 			},
 		},
 	}
@@ -29,7 +43,7 @@ func TestAccDnsARecord_Basic(t *testing.T) {
 				r.TestStep{
 					Config: test.DataSourceBlock,
 					Check: r.ComposeTestCheckFunc(
-						testCheckAttrStringArray("data.dns_a_record.foo", "addrs", test.Expected),
+						testCheckAttrStringArray(fmt.Sprintf("data.dns_a_record.%s", test.DataSourceName), "addrs", test.Expected),
 					),
 				},
 			},
