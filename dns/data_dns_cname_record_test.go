@@ -16,7 +16,7 @@ func TestAccDnsCnameRecord_Basic(t *testing.T) {
 			  host = "www.hashicorp.com"
 			}
 			`,
-			"prod.k.ssl.global.fastly.net.",
+			"s.shared.global.fastly.net.",
 		},
 	}
 
